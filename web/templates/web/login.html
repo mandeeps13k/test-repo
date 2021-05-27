@@ -1,0 +1,38 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+{% block css %}
+<style>
+	.login_button {
+		height:46px;
+		width:191px;
+		display:inline-block;
+		background-image: url("{% static 'images/btn_google_signin_dark_normal_web.png' %}");
+	}
+	.login_button:active {
+		background-image: url("{% static 'images/btn_google_signin_dark_pressed_web.png' %}");
+	}
+</style>
+{% endblock %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="row">
+	<div class="col-md-12 text-center">
+		<h1 class="display-4">Welcome to Akamai Error Translate App</h1>
+		<p class="lead" style="margin-top:20px;font-size:20pt;">Let's login first</p>
+	</div>
+</div>
+<div class="row text-center" style="margin-top:30px;">
+	<div class="col-md-12">
+		<div>
+			<a class="login_button" href="{% url 'social:begin' 'google-oauth2' %}"></a>
+		</div>
+	</div>
+</div>
+<div style="display:none;">
+	<img src="{% static 'images/btn_google_signin_dark_normal_web.png' %}" />
+	<img src="{% static 'images/btn_google_signin_dark_pressed_web.png' %}" />
+</div>
+{% endblock %}

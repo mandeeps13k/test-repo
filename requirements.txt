@@ -1,0 +1,4 @@
+django==3.1
+requests==2.24.0
+jira==2.0.0
+social-auth-app-django==4.0.0
